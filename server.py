@@ -41,8 +41,12 @@ def add_student():
     """Add new student to database. """
 
     first_name = request.args.get('f_name')
+    last_name = request.args.get('l_name')
+    github_user = request.args.get('github_username')
 
-    print(f'first name: {first_name}')
+    hackbright.make_new_student(first_name, last_name, github_user)
+
+    return (f'Success')  # added a return statement insted of print - Treanna
 
 
 if __name__ == '__main__':
